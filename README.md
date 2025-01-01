@@ -1,85 +1,88 @@
-# CypressAPIAutomation
+**Cypress API Automation**
 
-#Introduction
-In this project, we have created a comprehensive set of automated tests using Cypress to validate the functionality of various APIs provided by Reqres.in. 
-The test cases are designed to verify the behavior of the API endpoints, including the creation, retrieval, update, and deletion of users and resources, as well as handling scenarios with delays, invalid requests, and other edge cases.
+**Introduction**
 
-#Test Cases Breakdown
+In this project, we have developed a comprehensive suite of automated tests using Cypress to validate the functionality of various APIs provided by Reqres.in.
+The test cases aim to verify the behavior of API endpoints, including the creation, retrieval, update, and deletion of users and resources. Additionally, they cover edge cases such as delayed responses, invalid requests, and non-existent resources.
+
+**API URL : https://reqres.in/**
+
+**Test Cases Breakdown**
 1. List Users
 Endpoint: /api/users
-Test Purpose: To retrieve a list of users and validate the response, pagination, and user data.
-
+Test Purpose: Validate the retrieval of a user list, including response data, pagination, and individual user details.
 2. Single User
 Endpoint: /api/users/{id}
-Test Purpose: To retrieve a specific user by ID and verify that the user exists and the correct data is returned.
-
+Test Purpose: Verify the retrieval of a specific user by ID, ensuring correct user data is returned.
 3. Single User Not Found
 Endpoint: /api/users/{id}
-Test Purpose: To verify that the API returns a 404 status when a non-existent user ID is requested.
-
-4. List <Resource>
+Test Purpose: Confirm that the API returns a 404 status for non-existent user IDs.
+4. List Resources
 Endpoint: /api/unknown
-Test Purpose: To retrieve a list of resources and validate the data and pagination.
-
-5. Single <Resource>
+Test Purpose: Validate the retrieval of resource data and pagination.
+5. Single Resource
 Endpoint: /api/unknown/{id}
-Test Purpose: To retrieve a specific resource and validate that the data is returned correctly.
-
-6. Single <Resource> Not Found
+Test Purpose: Verify the retrieval of a specific resource with correct data.
+6. Single Resource Not Found
 Endpoint: /api/unknown/{id}
-Test Purpose: To verify that the API returns a 404 when a non-existent resource ID is requested.
-
+Test Purpose: Confirm a 404 status is returned for non-existent resource IDs.
 7. Create User
 Endpoint: /api/users
-Test Purpose: To create a new user and verify the response for status code 201, ensuring the correct user data is returned.
-
+Test Purpose: Test user creation and validate the response for status code 201 with accurate user data.
 8. Update User
 Endpoint: /api/users/{id}
-Test Purpose: To update an existing user's information and verify the updated data in the response.
-
+Test Purpose: Verify updating user details and the accuracy of the returned data.
 9. Patch User
 Endpoint: /api/users/{id}
-Test Purpose: To partially update an existing user and ensure the correct data is updated and returned.
-
+Test Purpose: Test partial updates to a user and validate the updated response.
 10. Delete User
 Endpoint: /api/users/{id}
-Test Purpose: To delete a user by ID and verify that the user no longer exists.
-
+Test Purpose: Verify user deletion and confirm the user no longer exists.
 11. Register - Successful/Unsuccessful
 Endpoint: /api/register
-Test Purpose: To test user registration with valid credentials and verify the response contains the correct id and token.
-
+Test Purpose: Test user registration with valid/invalid credentials and verify response for ID and token.
 12. Login - Successful/Unsuccessful
 Endpoint: /api/login
-Test Purpose: To test user login with valid credentials and verify the response contains the correct token.
-
+Test Purpose: Test login functionality with valid/invalid credentials and ensure token validation.
 13. Delayed Response
 Endpoint: /api/users?delay=3
-Test Purpose: To test an endpoint with a delay parameter and verify that the response is delayed as expected (around 3 seconds).
 
-#Custom Commands
-To streamline the testing process and avoid code repetition, we created a set of Cypress custom commands. These commands are reusable and can be invoked across multiple tests to perform common checks.
+Test Purpose: Verify endpoint behavior with a delay parameter, ensuring the response is delayed as expected (~3 seconds).
 
-List of Custom Commands
-- verifyResponseStatus
-- verifyResponseTime
-- CheckAvatarUrlStatus
-- checkSupportUrlStatus
-- verifyEmailValidity
-- verifyAvatarUrls
-- verifySupportObject
-- verifyNoEmptyUserObjects
-- verifyNoEmptySingleresourceObject
-- verifyValidEmails
-- apiGetNonExistent
-- verifyUserExists
+**Custom Commands**
 
+To enhance the efficiency of the testing process and eliminate code duplication, we have implemented reusable Cypress custom commands. These commands simplify validation and are invoked across multiple tests.
 
-#Conclusion
-In this project, we have meticulously created individual test cases for each API endpoint to ensure comprehensive validation of their behavior. 
-Additionally, we have implemented a set of custom Cypress commands that reduce code duplication, enhance readability, and streamline the testing process.
+**List of Custom Commands**
 
-With these test cases and custom commands, we can confidently verify that the APIs are functioning as expected and handle various edge cases like non-existent users, invalid requests, and delayed responses.
+verifyResponseStatus
 
-Feel free to extend or modify the tests and custom commands as necessary to suit your needs!
+verifyResponseTime
 
+checkAvatarUrlStatus
+
+checkSupportUrlStatus
+
+verifyEmailValidity
+
+verifyAvatarUrls
+
+verifySupportObject
+
+verifyNoEmptyUserObjects
+
+verifyNoEmptySingleResourceObject
+
+verifyValidEmails
+
+apiGetNonExistent
+
+verifyUserExists
+
+**Conclusion**
+
+This project provides a robust framework for testing Reqres.in APIs. Each test case ensures thorough validation of API behavior, while the custom commands enhance code readability and reusability.
+
+By covering a wide range of scenarios, including edge cases like non-existent resources, invalid requests, and delayed responses, this framework ensures the reliability of the APIs.
+
+Feel free to extend or customize the tests and commands to meet your specific requirements!
